@@ -23,12 +23,14 @@
     [WXDevTool launchDevToolDebugWithUrl:@"ws://100.84.234.5:8088/debugProxy/native"];
     
     // Add an event listener to refresh the weex view
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationRefreshInstance:) name:@"RefreshInstance" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshInstance:) name:@"RefreshInstance" object:nil];
+
     [self render];
 }
 
-- (void)notificationRefreshInstance:(NSNotification *)notification {
-    // Refresh function,
+
+- (void)refreshInstance:(NSNotification *)notification {
+    // Refresh function
     [self render];
 }
 

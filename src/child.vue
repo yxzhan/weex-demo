@@ -62,11 +62,11 @@
 <script>
   const tentacle = '\\                 /'
   const faces = [
-    ' (●ﾟωﾟ●)',
+    '￣３￣',    
+    ' ●ﾟωﾟ●',
     '@ __ @',
-    '(￣.￣)',
-    '(￣︶￣)',
-    '(￣３￣)',
+    '￣.￣',
+    '￣︶￣',
   ]
   export default {
     data () {
