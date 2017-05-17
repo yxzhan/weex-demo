@@ -159,6 +159,12 @@ Watch files change
 weex debug ./dist/app.weex.js
 ```
 
+### Implement WXImgLoaderProtocol
+
+* Import a cocoapods dependencies called `SDWebImage` (version 3.7.x)
+* Create an weex handler (WXImgLoaderDefaultImpl) which is an object-c interface to implement `WXImgLoaderProtocol`
+* Register the image handler after init weex sdk environment
+
 ## notes
 Native bundle has not implement the image component, so `<image>` label doesn't work. 
 You can config more babel, ESLint and PostCSS plugins in `webpack.config.js`.
