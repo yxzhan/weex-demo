@@ -5,7 +5,9 @@
     :src="imageUrl"/>-->
   <div class="bee-head" @click="changeEmotion">
     <text class="tentacle">{{tentacle}}</text>
-    <text class="bee-face">{{faces[currentFace]}}</text>
+    <div class="center">
+      <text class="bee-face">{{faces[currentFace]}}</text>
+    </div>
   </div>
   <div v-for="(item, index) in rollingInTheDeep" :key="index">
     <text class="text-row" @click="go2NextFrame">{{item[currentFrame]}}</text>
@@ -22,11 +24,10 @@
     border-width: 1px;
     border-color: #ff0;
   }
-  .bee-head {
-    text-align: center;
-    height: 550px;
+  .center {
+    height: 420px;    
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
   }
   .tentacle {
     font-size: 60px;
