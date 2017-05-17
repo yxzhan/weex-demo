@@ -3,4 +3,5 @@ target 'hello-weex-ios' do
     platform :ios, '7.0' 
     pod 'WeexSDK', '~> 0.11.0'
     pod 'WXDevtool', '~> 0.9.5'
+    pod 'SDWebImage', '~> 3.7.5'
 end

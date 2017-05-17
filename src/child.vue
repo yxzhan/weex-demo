@@ -1,10 +1,11 @@
 <template>
 <div class="child">
   <image style="width:750px; height:750px; background-color:#ff0;"
-    placeholder="what a image!"
     @load="onloadImg($event)"
     :src="imageUrl"/>
-
+  <div class="bee-head" @click="changeEmotion">
+    <text class="bee-face">{{emotion}}</text>
+  </div>
   <div v-for="(item, index) in rollingInTheDeep" :key="index">
     <text class="text-row" @click="go2NextFrame">{{item[currentFrame]}}</text>
     <input class="input" type="text" />
@@ -13,6 +14,18 @@
 </template>
 
 <style>
+  .bee-head {
+    text-align: center;    
+    height: 550px;
+    background-color: #ff0;
+  }
+  .bee-face {
+    margin-top: 120px;
+    font-style: bold;
+    font-size: 130px;    
+    color: #333;
+    text-align: center;
+  }
   .child {
     text-align: center;
   }
@@ -35,7 +48,10 @@
 </style>
 
 <script>
- 
+  const faces = [
+    '@ __ @',
+
+  ]
   export default {
     data () {
       const chars = ['-', '\\', '|', '/']
@@ -48,13 +64,14 @@
       return {
         imageUrl: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',      
         currentFrame: 0,
+        emotion: faces[0],
         rollingInTheDeep
       }
     },
-    mounted () {
-
-    },
     methods: {
+      changeEmotion () {
+
+      },
       onloadImg (e) {
         console.log('image on load')
       },
