@@ -11,7 +11,7 @@ A setting up demo of weex in ios platform.
 * Install sdk with cocoapods (or import from source code)
 * Setup SDK weex environment
 * Run webpack build process, run a server to serve the js bundle, run a debug server, build and run ios simulator
-
+* Boot a ios simulator in shell `xcrun instruments -w "iPhone 5s"`
 ## getting start
 
 ```bash
@@ -160,11 +160,12 @@ weex debug ./dist/app.weex.js
 ```
 
 ## notes
-
+Native bundle has not implement the image component, so `<image>` label doesn't work. 
 You can config more babel, ESLint and PostCSS plugins in `webpack.config.js`.
 
 
 ## Todos
-* Build ios app in and Run simulator with command line tool
+* Build native code and Run simulator with command line tool
 * Integrate weex in a swift project
 * Try android platform also
+* Web platform live reload

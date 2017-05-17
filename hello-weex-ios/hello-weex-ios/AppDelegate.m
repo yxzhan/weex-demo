@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <WeexSDK/WeexSDK.h>
+#import "WXImgLoaderDefaultImpl.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,8 @@
     
     //init sdk enviroment
     [WXSDKEngine initSDKEnviroment];
+    [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
+
     //set the log level
     [WXLog setLogLevel: WXLogLevelAll];
 

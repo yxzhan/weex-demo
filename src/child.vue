@@ -1,8 +1,10 @@
 <template>
-<div>
-    <image style="width:750px; height:750px;"
-      @load="onloadImg($event)"
-      :src="imageUrl"/>
+<div class="child">
+  <image style="width:750px; height:750px; background-color:#ff0;"
+    placeholder="what a image!"
+    @load="onloadImg($event)"
+    :src="imageUrl"/>
+
   <div v-for="(item, index) in rollingInTheDeep" :key="index">
     <text class="text-row" @click="go2NextFrame">{{item[currentFrame]}}</text>
     <input class="input" type="text" />
@@ -11,7 +13,9 @@
 </template>
 
 <style>
-
+  .child {
+    text-align: center;
+  }
   .text-row,
   .input {
     color: #fff;
@@ -35,8 +39,7 @@
   export default {
     data () {
       const chars = ['-', '\\', '|', '/']
-      const rows = 10
-      const rowLength = 1
+      const rows = 100
       const rollingInTheDeep = []
       for (let a = 0; a < rows; a++) {
         const i = a % 4
