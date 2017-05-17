@@ -1,10 +1,11 @@
 <template>
 <div class="child">
-  <image style="width:750px; height:750px; background-color:#ff0;"
+  <!--<image style="width:750px; height:750px; background-color:#ff0;"
     @load="onloadImg($event)"
-    :src="imageUrl"/>
+    :src="imageUrl"/>-->
   <div class="bee-head" @click="changeEmotion">
-    <text class="bee-face">{{emotion}}</text>
+    <text class="tentacle">{{tentacle}}</text>
+    <text class="bee-face">{{faces[currentFace]}}</text>
   </div>
   <div v-for="(item, index) in rollingInTheDeep" :key="index">
     <text class="text-row" @click="go2NextFrame">{{item[currentFrame]}}</text>
@@ -14,15 +15,28 @@
 </template>
 
 <style>
+  .child {
+    background-color: #ff0; 
+  }
+  .border {
+    border-width: 1px;
+    border-color: #ff0;
+  }
   .bee-head {
-    text-align: center;    
+    text-align: center;
     height: 550px;
-    background-color: #ff0;
+    align-items: center;
+    justify-content: center;    
+  }
+  .tentacle {
+    font-size: 60px;
+    font-weight: bold;
   }
   .bee-face {
-    margin-top: 120px;
-    font-style: bold;
-    font-size: 130px;    
+    font-size: 130px;
+  }
+  .tentacle,
+  .bee-face {
     color: #333;
     text-align: center;
   }
@@ -33,9 +47,6 @@
   .input {
     color: #fff;
     background-color: #193556;
-    /*border-style: solid;*/
-    /*border-color: #F0B23E;*/
-    /*border-width: 5px;*/
     text-align: center;
     font-size: 64px;
     height: 90px;
@@ -48,9 +59,13 @@
 </style>
 
 <script>
+  const tentacle = '\\                 /'
   const faces = [
+    ' (●ﾟωﾟ●)',
     '@ __ @',
-
+    '(￣.￣)',
+    '(￣︶￣)',
+    '(￣３￣)',
   ]
   export default {
     data () {
@@ -64,13 +79,15 @@
       return {
         imageUrl: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',      
         currentFrame: 0,
-        emotion: faces[0],
+        currentFace: 0,
+        faces,
+        tentacle,
         rollingInTheDeep
       }
     },
     methods: {
       changeEmotion () {
-
+        this.currentFace = (this.currentFace + 1) % faces.length        
       },
       onloadImg (e) {
         console.log('image on load')
