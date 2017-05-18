@@ -12,7 +12,7 @@ import com.taobao.weex.utils.WXViewUtils;
 
 public class MainActivity extends AppCompatActivity implements IWXRenderListener {
 
-    private static String BUNDLEURL = "http://100.84.234.5:8080/dist/app.weex.js";
+    private static String BUNDLEURL = "http://192.168.0.103:8080/dist/app.weex.js";
     WXSDKInstance mWXSDKInstance;
 
     @Override
@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
         mWXSDKInstance = new WXSDKInstance(this);
         mWXSDKInstance.registerRenderListener(this);
 
-        // call render function
+        renderWeexPage();
+    }
+    protected void renderWeexPage() {
         mWXSDKInstance.renderByUrl(
                 "hello-weex",
                 BUNDLEURL,
@@ -35,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
                 WXRenderStrategy.APPEND_ASYNC
         );
     }
-
     /**
      * Implement IWXRenderListener interface
      */

@@ -1,8 +1,8 @@
 <template>
 <div class="child">
-  <!--<image style="width:750px; height:750px; background-color:#ff0;"
+  <image style="width:750px; height:750px; background-color:#ff0;"
     @load="onloadImg($event)"
-    :src="imageUrl"/>-->
+    :src="imageUrl"/>
   <div class="bee-head" @click="changeEmotion">
     <text class="tentacle">{{tentacle}}</text>
     <div class="center">
