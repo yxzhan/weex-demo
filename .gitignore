@@ -3,7 +3,14 @@ dist
 config.js
 *log
 UserInterfaceState.xcuserstate
-Hello-weex-android
 hello-weex-ios/Pods
 hello-weex-swift/Pods
 hello-weex-swift/
+
+Hello-weex-android/.gradle
+Hello-weex-android/playground/app/gradlew.bat
+Hello-weex-android/.idea/
+Hello-weex-android/build
+Hello-weex-android//captures
+
+.externalNativeBuild

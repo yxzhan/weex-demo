@@ -158,6 +158,36 @@ Watch files change
 ```
 weex debug ./dist/app.weex.js
 ```
+### Android Integrate
+
+* Create an empty android project, Import SDK from source code or `jcenter`
+* Create an new class `WXApplication` extend from Android buildin class `Application`
+* Do Weex engine initiation in the WXApplication's onCreate handler
+```
+// File: WXApplication.java
+import com.taobao.weex.InitConfig;
+import com.taobao.weex.WXSDKEngine;
+......
+    public void onCreate() {
+        ......        
+        WXSDKEngine.initialize(this, new InitConfig.Builder().build());
+        ......
+    }
+```
+* Modify file AndroidManifest.xml
+```
+    <!--add internet permission inside manifest label-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    ......
+    <!--add name attribute for the root application label-->
+    <application
+        android:name=".WXApplication"
+    ......
+```
+
+
+> Note: `AndroidManifest.xml` file declare the structure of an android application
+
 
 ### Implement WXImgLoaderProtocol
 
