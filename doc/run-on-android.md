@@ -13,10 +13,14 @@
 1. 用android studio创建空android项目，最低版本选API 19, activity选择Empty Activity
 2. 修改build.gradle（这里指的是app module下面的build.gradle）加入如下基础依赖：
 ```java
-compile 'com.android.support:recyclerview-v7:25.3.1'
-compile 'com.android.support:appcompat-v7:25.3.1'
-compile 'com.taobao.android:weex_sdk:0.11.0'
-compile 'com.alibaba:fastjson:1.1.45'
+...
+dependencies {
+    ...
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.taobao.android:weex_sdk:0.11.0'
+    compile 'com.alibaba:fastjson:1.1.46'
+}
 ```
 说明：recyclerview和appcompat的版本要根据自己安装的android SDK版本作修改，fastjson依赖也是必须引入，不然用0.11.0版本的weex_sdk在引擎初始化会崩溃。
 
@@ -99,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
     }
     @Override
     public void onException(WXSDKInstance instance, String errCode, String msg) {
+        // 如果显示不出东西，可以在这里打个点，看看报的什么错
         Log.e("weex error", msg);
     }
     /**
