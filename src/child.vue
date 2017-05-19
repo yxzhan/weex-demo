@@ -78,7 +78,7 @@
         rollingInTheDeep.push(chars)
       }
       return {
-        imageUrl: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',      
+        imageUrl: 'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png',      
         currentFrame: 0,
         currentFace: 0,
         faces,

@@ -8,11 +8,10 @@ import android.util.Log;
 import com.taobao.weex.IWXRenderListener;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.WXRenderStrategy;
-import com.taobao.weex.utils.WXViewUtils;
 
 public class MainActivity extends AppCompatActivity implements IWXRenderListener {
 
-    private static String BUNDLEURL = "http://192.168.0.103:8080/dist/app.weex.js";
+    private static String BUNDLEURL = "http://100.84.234.5:8080/dist/app.weex.js";
     WXSDKInstance mWXSDKInstance;
 
     @Override
@@ -23,7 +22,6 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
         // init weex instance
         mWXSDKInstance = new WXSDKInstance(this);
         mWXSDKInstance.registerRenderListener(this);
-
         renderWeexPage();
     }
     protected void renderWeexPage() {
@@ -32,13 +30,11 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
                 BUNDLEURL,
                 null,
                 null,
-                WXViewUtils.getScreenWidth(this),
-                WXViewUtils.getScreenHeight(this),
                 WXRenderStrategy.APPEND_ASYNC
         );
     }
     /**
-     * Implement IWXRenderListener interface
+     * Weex实例的事件回调
      */
     @Override
     public void onViewCreated(WXSDKInstance instance, View view) {
@@ -54,9 +50,8 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
     public void onException(WXSDKInstance instance, String errCode, String msg) {
         Log.e("weex error", msg);
     }
-
     /**
-     * Native activity life circle events handlers
+     * 原生activity的生命周期事件回调
      */
     @Override
     protected void onResume() {
