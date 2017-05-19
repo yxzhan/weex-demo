@@ -1,10 +1,4 @@
----
-title: weex android集成的官方文档细节补充
-type: guide
-has_chapter_content: false
-chapter_title: Intro
-version: 1.0
----
+
 # 对weex android集成的官方文档细节补充
 
 ## 说明
