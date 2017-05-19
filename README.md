@@ -160,7 +160,7 @@ weex debug ./dist/app.weex.js
 ```
 ### Android Integrate
 
-See [run-on-androi.md](./doc/run-on-android.md) for android (in Chinese).
+See [run-on-android-cn.md](./doc/run-on-android-cn.md) for android (in Chinese).
 
 > Note: `AndroidManifest.xml` file declare the structure of an android application
 
